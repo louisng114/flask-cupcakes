@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+</head>
+<body>
+    <h1>Cupcakes</h1>
+    <ul id="cupcakeList">
+        {%for cupcake in cupcakes%}
+        <li><img src="{{cupcake.image}}" height="200">
+            {{cupcake.flavor}}</li>
+        {%endfor%}
+    </ul><br>
+
+    <form>
+        <label for="flavor">Flavor: </label>
+        <input type="text" name="flavor" id="flavor" required><br>
+        <label for="size">Size: </label>
+        <input type="text" name="size" id="size" required><br>
+        <label for="rating">Rating: </label>
+        <input type="number" name="rating" id="rating" required><br>
+        <label for="image">Image</label>
+        <input type="url" name="image" id="image" required><br>
+        <input type="submit" id="submitBtn" value="Add Cupcake"><br>
+    </form>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/cupcakes.js"></script>
+</body>
+</html>
